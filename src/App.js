@@ -6,10 +6,19 @@ import CartProvider from './store/CartProvider';
 import Cart from './components/Cart/Cart';
 
 function App() {
+function showCartHandler() {
+setCartIsShown(true);  
+}
+function hideCartHandler() 
+setCartIsShown(false);{
+  
+}
+
+
   return (
     <CartProvider>
-    <Cart />
-      <Header />
+    {CartIsShowCart && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler}/>
       <main>
         <Meals />
       </main>
